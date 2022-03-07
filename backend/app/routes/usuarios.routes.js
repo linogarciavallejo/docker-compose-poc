@@ -9,17 +9,14 @@ module.exports = (app) => {
   // Recuperar todos los Usuarios
   router.get("/", usuarios.findAll);
 
-  // // Retrieve a single Tutorial with id
-  // router.get("/:id", tutorials.findOne);
+  // Recuperar un Usuario a través de su id
+  router.get("/:id", usuarios.findOne);
 
-  // // Update a Tutorial with id
-  // router.put("/:id", tutorials.update);
+  // Actualizar un Usuario por medio del id en el request
+  router.put("/:id", usuarios.update);
 
-  // // Delete a Tutorial with id
-  // router.delete("/:id", tutorials.delete);
-
-  // // Delete all Tutorials
-  // router.delete("/", tutorials.deleteAll);
+  // Eliminar un Usuario con el id especificado en el request
+  router.delete("/:id", usuarios.delete);
 
   app.use("/api/usuarios", router);
 };
