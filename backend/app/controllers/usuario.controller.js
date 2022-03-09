@@ -1,5 +1,5 @@
 const db = require("../models");
-const Usuarios = db.Usuarios;
+const Usuario = db.usuarios;
 const Op = db.Sequelize.Op;
 
 // Crear un nuevo Usuario
@@ -26,7 +26,7 @@ exports.create = (req, res) => {
   };
 
   // Guardar Usuario en la Base de Datos
-  Usuarios.create(usuario)
+  Usuario.create(usuario)
     .then((data) => {
       res.send(data);
     })
@@ -37,27 +37,12 @@ exports.create = (req, res) => {
     });
 };
 
-// Recuperar un Usuario a través de su id
-exports.findOne = (req, res) => {
-  const id = req.params.id;
-
-  Usuarios.findByPk(id)
-    .then((data) => {
-      res.send(data);
-    })
-    .catch((err) => {
-      res.status(500).send({
-        message: `Error recuperando el Usuario con el id=${id}`,
-      });
-    });
-};
-
 // Recuperar todos los Usuarios
 exports.findAll = (req, res) => {
-  const usuario = req.query.usuario;
-  var condition = usuario ? { nombres: { [Op.like]: `%${usuario}%` } } : null;
+  const nombres = req.query.nombres;
+  var condition = nombres ? { nombres: { [Op.like]: `%${nombres}%` } } : null;
 
-  Usuarios.findAll({ where: condition })
+  Usuario.findAll({ where: condition })
     .then((data) => {
       res.send(data);
     })
@@ -70,11 +55,26 @@ exports.findAll = (req, res) => {
     });
 };
 
+// Recuperar un Usuario a través de su id
+exports.findOne = (req, res) => {
+  const id = req.params.id;
+
+  Usuario.findByPk(id)
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: `Error recuperando el Usuario con el id=${id}`,
+      });
+    });
+};
+
 // Actualizar un Usuario por medio del id en el request
 exports.update = (req, res) => {
   const id = req.params.id;
 
-  Usuarios.update(req.body, {
+  Usuario.update(req.body, {
     where: { id: id },
   })
     .then((num) => {
@@ -99,7 +99,7 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
   const id = req.params.id;
 
-  Usuarios.destroy({
+  Usuario.destroy({
     where: { id: id },
   })
     .then((num) => {
@@ -115,7 +115,7 @@ exports.delete = (req, res) => {
     })
     .catch((err) => {
       res.status(500).send({
-        message: "No se puede eliminar el Usuario con id=" + id,
+        message: `No se puede eliminar el Usuario con id=${id}`,
       });
     });
 };

@@ -26,10 +26,13 @@ db.sequelize.sync();
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to Taller3 application." });
+  res.json({
+    message:
+      "Bienvenidos a la aplicación Docker en Acción - Taller 3 Prácticas Iniciales.",
+  });
 });
 
-require("./app/routes/usuarios.routes")(app);
+require("./app/routes/usuario.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.NODE_DOCKER_PORT || 8080;
