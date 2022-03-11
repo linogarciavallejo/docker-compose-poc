@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { useParams } from "react-router-dom";
 
 import UsuarioDataService from "../services/usuario.service";
 export default class Usuario extends Component {
@@ -22,8 +21,7 @@ export default class Usuario extends Component {
     };
   }
   componentDidMount() {
-    const { usuarioId } = useParams();
-    this.getUsuario(usuarioId);
+    this.getUsuario(this.props.match.params.id);
   }
   onChangeNombres(e) {
     const nombres = e.target.value;
@@ -101,7 +99,7 @@ export default class Usuario extends Component {
       <div>
         {currentUsuario ? (
           <div className="edit-form">
-            <h4>Tutorial</h4>
+            <h4>Usuario</h4>
             <form>
               <div className="form-group">
                 <label htmlFor="nombres">Nombres</label>

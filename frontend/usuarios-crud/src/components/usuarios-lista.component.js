@@ -45,22 +45,12 @@ export default class UsuariosLista extends Component {
       currentIndex: -1,
     });
   }
-  setUsuarioActivo(tutorial, index) {
+  setUsuarioActivo(usuario, index) {
     this.setState({
-      currentUsuario: tutorial,
+      currentUsuario: usuario,
       currentIndex: index,
     });
   }
-  //   removeAllusuarios() {
-  //     UsuarioDataService.deleteAll()
-  //       .then((response) => {
-  //         console.log(response.data);
-  //         this.refreshList();
-  //       })
-  //       .catch((e) => {
-  //         console.log(e);
-  //       });
-  //   }
   buscarUsuario() {
     UsuarioDataService.findByTitle(this.state.buscarUsuario)
       .then((response) => {

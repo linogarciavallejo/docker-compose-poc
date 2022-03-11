@@ -1,17 +1,9 @@
 import React, { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  Routes,
-} from "react-router-dom";
+import { Route, Link, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-
-import UsuariosLista from "./components/usuarios-lista.component";
-import AgregarUsuario from "./components/agregar-usuario.component";
-import Usuario from "./components/usuario.component";
+import ElementWrapper from "./element-wrapper";
+import routes from "./routes";
 
 class App extends Component {
   render() {
@@ -36,10 +28,16 @@ class App extends Component {
         </nav>
         <div className="container mt-3">
           <Routes>
-            <Route exact path="/" element={<UsuariosLista />} />
-            <Route exact path="/usuarios" element={<UsuariosLista />} />
-            <Route exact path="/add" element={<AgregarUsuario />} />
-            <Route path="/usuarios/:id" element={<Usuario />} />
+            {routes.map((route, ind) => {
+              const { Component, ...Other } = route;
+              return (
+                <Route
+                  {...Other}
+                  key={`route-${ind}`}
+                  element={<ElementWrapper {...{ Component }} />}
+                />
+              );
+            })}
           </Routes>
         </div>
       </div>
