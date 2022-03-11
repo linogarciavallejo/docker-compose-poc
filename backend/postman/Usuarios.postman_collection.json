@@ -125,6 +125,32 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "RecuperarUsuarioPorNombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:6868/api/usuarios?nombres=lino",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6868",
+					"path": [
+						"api",
+						"usuarios"
+					],
+					"query": [
+						{
+							"key": "nombres",
+							"value": "lino"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

@@ -8,7 +8,6 @@ export default class UsuariosLista extends Component {
     this.recuperarUsuarios = this.recuperarUsuarios.bind(this);
     this.refreshList = this.refreshList.bind(this);
     this.setUsuarioActivo = this.setUsuarioActivo.bind(this);
-    // this.removeAllusuarios = this.removeAllusuarios.bind(this);
     this.buscarUsuario = this.buscarUsuario.bind(this);
     this.state = {
       usuarios: [],
@@ -52,7 +51,7 @@ export default class UsuariosLista extends Component {
     });
   }
   buscarUsuario() {
-    UsuarioDataService.findByTitle(this.state.buscarUsuario)
+    UsuarioDataService.findByNombre(this.state.buscarUsuario)
       .then((response) => {
         this.setState({
           usuarios: response.data,
@@ -73,7 +72,7 @@ export default class UsuariosLista extends Component {
             <input
               type="text"
               className="form-control"
-              placeholder="Search by title"
+              placeholder="Buscar por nombre de usuario"
               value={buscarUsuario}
               onChange={this.onChangeBuscarUsuario}
             />
@@ -83,7 +82,7 @@ export default class UsuariosLista extends Component {
                 type="button"
                 onClick={this.buscarUsuario}
               >
-                Search
+                Buscar
               </button>
             </div>
           </div>
@@ -101,16 +100,10 @@ export default class UsuariosLista extends Component {
                   onClick={() => this.setUsuarioActivo(usuario, index)}
                   key={index}
                 >
-                  {usuario.nombres}
+                  {usuario.nombres.trim() + " " + usuario.apellidos.trim()}
                 </li>
               ))}
           </ul>
-          {/* <button
-            className="m-3 btn btn-sm btn-danger"
-            onClick={this.removeAllusuarios}
-          >
-            Remove All
-          </button> */}
         </div>
         <div className="col-md-6">
           {currentUsuario ? (
@@ -134,12 +127,7 @@ export default class UsuariosLista extends Component {
                 </label>{" "}
                 {currentUsuario.email}
               </div>
-              <Link
-                to={"/usuarios/" + currentUsuario.id}
-                className="badge badge-warning"
-              >
-                Editar
-              </Link>
+              <Link to={"/usuarios/" + currentUsuario.id}>Editar</Link>
             </div>
           ) : (
             <div>

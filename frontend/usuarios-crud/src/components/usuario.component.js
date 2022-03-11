@@ -132,19 +132,19 @@ export default class Usuario extends Component {
                 />
               </div>
             </form>
-            <button
-              className="badge badge-danger mr-2"
-              onClick={this.eliminarUsuario}
-            >
-              Eliminar
-            </button>
-            <button
-              type="submit"
-              className="badge badge-success"
-              onClick={this.actualizarUsuario}
-            >
-              Actualizar
-            </button>
+            <hr />
+            <div>
+              <button onClick={this.eliminarUsuario} class="btn btn-secondary">
+                Eliminar
+              </button>
+              <button
+                type="submit"
+                onClick={this.actualizarUsuario}
+                class="btn btn-primary"
+              >
+                Actualizar
+              </button>
+            </div>
             <p>{this.state.message}</p>
           </div>
         ) : (

@@ -15,5 +15,8 @@ class UsuarioDataService {
   delete(id) {
     return http.delete(`/usuarios/${id}`);
   }
+  findByNombre(nombre) {
+    return http.get(`/usuarios?nombres=${nombre}`);
+  }
 }
 export default new UsuarioDataService();

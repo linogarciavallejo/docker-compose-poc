@@ -13,8 +13,6 @@ export default class AgregarUsuario extends Component {
       nombres: "",
       apellidos: "",
       email: "",
-      //   published: false,
-      //   submitted: false,
     };
   }
   onChangeNombres(e) {
@@ -45,10 +43,11 @@ export default class AgregarUsuario extends Component {
           nombres: response.data.nombres,
           apellidos: response.data.apellidos,
           email: response.data.email,
-          //   published: response.data.published,
-          //   submitted: true,
         });
         console.log(response.data);
+        this.setState({
+          message: "El usuario fue creado exitosamente!",
+        });
       })
       .catch((e) => {
         console.log(e);
@@ -60,8 +59,6 @@ export default class AgregarUsuario extends Component {
       nombres: "",
       apellidos: "",
       email: "",
-      //   published: false,
-      //   submitted: false,
     });
   }
   render() {
@@ -108,11 +105,12 @@ export default class AgregarUsuario extends Component {
                 id="email"
                 required
                 value={this.state.email}
-                onChange={this.onChangeemail}
+                onChange={this.onChangeEmail}
                 name="email"
               />
             </div>
-            <button onClick={this.guardarUsuario} className="btn btn-success">
+            <hr />
+            <button onClick={this.guardarUsuario} className="btn btn-primary">
               Guardar
             </button>
           </div>
