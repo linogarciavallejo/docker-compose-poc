@@ -1,23 +1,21 @@
 {
-  "name": "usuarios-crud",
-  "version": "0.1.0",
+  "name": "usuarios-crud-frontend",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^0.26.1",
-    "bootstrap": "^5.1.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^6.2.2",
-    "react-scripts": "5.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.12.1",
+    "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -37,5 +35,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": ">=18.16.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "axios-mock-adapter": "^1.21.4",
+    "babel-jest": "^29.5.0",
+    "jest": "^27.5.1",
+    "jest-fetch-mock": "^3.0.3"
   }
 }

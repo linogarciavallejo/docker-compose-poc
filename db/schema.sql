@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.28, for macos10.15 (x86_64)
 --
--- Host: 127.0.0.1    Database: taller3pra
+-- Host: 127.0.0.1    Database: usuarios
 -- ------------------------------------------------------
 -- Server version	5.7.37
 
@@ -16,12 +16,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `taller3pra`
+-- Current Database: `usuarios`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `taller3pra` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `usuarios` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
-USE `taller3pra`;
+USE `usuarios`;
 
 --
 -- Table structure for table `usuarios`
@@ -46,7 +46,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Lino','Garcia Vallejo','lino.garciavallejo@outlook.com',now(),now()),(2,'Angie','Bejarano','angie@gmail.com',now(),now()),(3,'Kevin','Pinto','kevin@gmail.com',now(),now()),(4,'Cristian','Axpuac','cristian@gmail.com',now(),now()),(5,'Hesban','Argueta','hesban@gmail.com',now(),now());
+INSERT INTO `usuarios` VALUES (1,'Lino','Garcia Vallejo','lino.garciavallejo@outlook.com',now(),now()),(2,'Antonio','Gmail','lagv.ales@gmail.com',now(),now()),(3,'Lino','Yahoo','lino_ale@yahoo.com',now(),now());
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

@@ -19,4 +19,6 @@ class UsuarioDataService {
     return http.get(`/usuarios?nombres=${nombre}`);
   }
 }
-export default new UsuarioDataService();
+
+const usuarioDataService = new UsuarioDataService();
+export default usuarioDataService;

@@ -11,7 +11,7 @@ class App extends Component {
       <div>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
           <a href="/usuarios" className="navbar-brand">
-            Prácticas Iniciales - Grupo 8 - Taller 3 - Usuarios CRUD
+            Usuarios CRUD - Docker Compose PoC
           </a>
           <div className="navbar-nav mr-auto">
             <li className="nav-item">

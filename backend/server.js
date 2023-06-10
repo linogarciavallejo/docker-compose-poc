@@ -27,8 +27,7 @@ db.sequelize.sync();
 // simple route
 app.get("/", (req, res) => {
   res.json({
-    message:
-      "Bienvenidos a la aplicación Docker en Acción - Taller 3 Prácticas Iniciales.",
+    message: "Bienvenidos a la Prueba de Concepto Docker Compose en Acción",
   });
 });
 

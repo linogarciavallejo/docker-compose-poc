@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   mysqldb:
@@ -35,7 +35,7 @@ services:
     networks:
       - backend
       - frontend
-  
+
   frontend:
     depends_on:
       - backend
@@ -48,7 +48,7 @@ services:
     networks:
       - frontend
 
-volumes: 
+volumes:
   db:
 
 networks:
