@@ -52,7 +52,7 @@ REACT_APP_API_BASE_URL=http://localhost:6868/api
 
 ```
 
-<h3>Run the POC:</h3>
+<h3>Build the POC:</h3>
 
 It's quite easy to run the POC through the command line:
 
@@ -81,3 +81,14 @@ If you prefer to stop and remove all containers, networks, and all images used b
 ```less
 docker-compose down --rmi all
 ```
+
+<h3>You're ready to run the POC:</h3>
+
+You will be able to see the React frontend app:
+![React frontend app](/assets/usuarios-docker-compose-poc-frontend.png "React frontend app")
+
+You can play with the NodeJS backend API either through the browser or with Postman:
+![NodeJS backend API](/assets/usuarios-docker-compose-poc-postman.png "NodeJS backend API")
+
+And you can see the Docker containers and images as well:
+![Docker containers and images](/assets/usuarios-docker-compose-poc-containers-and-images.png "Docker containers and images")
